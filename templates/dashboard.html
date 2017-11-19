@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h1>Dashboard
+    <small> Welcome {{ current_user.id }} </small>
+</h1>
+<a class="btn btn-success" href="/upload_file">Scheme</a>
+<hr>
+<ul>
+<div class="container">
+    {% if filename %}
+        <li>{{ url_for('uploaded_file', filename=filename) }}</li>
+    {% endif %}
+</div>
+</ul>
+{% endblock %}
